@@ -182,12 +182,9 @@ public class PlayerActivity extends AppCompatActivity {
         Toast.makeText(this, "歌曲已保存在本地", Toast.LENGTH_SHORT).show();
     }
 
-    private void backHome(){
-        Intent homeIntent = new Intent(PlayerActivity.this, MainActivity.class);
-        homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(homeIntent);
-        finish();
-    }
+        private void backHome(){
+            finish();
+        }
 
     private void playPrevious() {
         // 实现播放上一首的逻辑

@@ -2,11 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/option_1"
-        android:title="下一首播放" />
+        android:title="播放" />
     <item
         android:id="@+id/option_2"
-        android:title="加入收藏" />
-    <item
-        android:id="@+id/option_3"
         android:title="加入歌单" />
 </menu>

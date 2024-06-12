@@ -15,6 +15,7 @@ import androidx.room.Room;
 
 import csu.wsq.musicplayer.R;
 import csu.wsq.musicplayer.adapter.MusicAdapter;
+import csu.wsq.musicplayer.dao.FavoriteDao;
 import csu.wsq.musicplayer.dao.MusicDao;
 import csu.wsq.musicplayer.entity.Music;
 import csu.wsq.musicplayer.service.PlayerService;
@@ -33,6 +34,7 @@ public class RecentMusicActivity extends AppCompatActivity {
     private boolean isBound = false;
     private ServiceConnection serviceConnection;
     private PlayerService playerService;
+    private FavoriteDao favoriteDao;
 
 
     @Override
@@ -51,6 +53,8 @@ public class RecentMusicActivity extends AppCompatActivity {
     private void initDataBase() {
         AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "music-db").build();
         musicDao = db.musicDao();
+        favoriteDao=db.favoriteDao();
+
     }
 
     private void initService() {

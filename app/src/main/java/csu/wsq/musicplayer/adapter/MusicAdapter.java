@@ -30,11 +30,13 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicViewHol
 
     private List<Music> musicList;
 
+    private static FavoriteDao favoriteDao;
     private OnItemClickListener onItemClickListener;
     private final Executor executor = Executors.newSingleThreadExecutor();
 
     public MusicAdapter(List<Music> musicList) {
         this.musicList = musicList;
+
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -105,19 +107,16 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicViewHol
                     }
                     return true;
                 } else if (id == R.id.option_2) {
-                    if(music.isLiked()) {
-                        music.setLiked(false);
-                        Toast.makeText(view.getContext(), "已经收藏过了", Toast.LENGTH_SHORT).show();
-                        executor.execute(() -> favoriteDao.deleteByMusicId(music.getId()));
-                    } else {
-                        music.setLiked(true);
-                        Toast.makeText(view.getContext(), "收藏成功", Toast.LENGTH_SHORT).show();
-                        executor.execute(() -> favoriteDao.insert(new Favorite(music.getId())));
-                    }
-                    refreshInfo();
-                    return true;
-                } else if (id == R.id.option_3) {
-                    Toast.makeText(view.getContext(), "选项3被点击", Toast.LENGTH_SHORT).show();
+//                    if(music.isLiked()) {
+//                        music.setLiked(false);
+//                        Toast.makeText(view.getContext(), "已经收藏过了", Toast.LENGTH_SHORT).show();
+//                        executor.execute(() -> favoriteDao.deleteByMusicId(music.getId()));
+//                    } else {
+//                        music.setLiked(true);
+//                        Toast.makeText(view.getContext(), "收藏成功", Toast.LENGTH_SHORT).show();
+//                        executor.execute(() -> favoriteDao.insert(new Favorite(music.getId())));
+//                    }
+////                    refreshInfo();
                     return true;
                 } else {
                     return false;
