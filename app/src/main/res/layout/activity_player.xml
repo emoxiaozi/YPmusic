@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="57dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/ic_back"
+        android:rotationX="0"
+        android:textColorLink="#303F9F"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <!-- 专辑封面 -->
+
+        <ImageView
+            android:id="@+id/albumCover"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_yinfu" />
+
+        <!-- 歌曲标题 -->
+        <TextView
+            android:id="@+id/musicTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/albumCover"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="[ 主题曲 ] 无羁（合唱版）"
+            android:textSize="18sp"
+            android:textColor="#000000" />
+
+        <!-- 歌手名称 -->
+        <TextView
+            android:id="@+id/artistName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/musicTitle"
+            android:layout_centerHorizontal="true"
+            android:text="肖战"
+            android:textSize="16sp"
+            android:textColor="#888888"
+            android:layout_marginTop="8dp" />
+
+        <!-- 播放进度条 -->
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/artistName"
+            android:layout_marginTop="16dp" />
+
+        <!-- 当前时间 -->
+        <TextView
+            android:id="@+id/currentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seekBar"
+            android:layout_alignParentStart="true"
+            android:text="00:04"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_marginTop="8dp"/>
+
+        <!-- 总时长 -->
+        <TextView
+            android:id="@+id/totalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seekBar"
+            android:layout_alignParentEnd="true"
+            android:text="04:13"
+            android:textSize="14sp"
+            android:textColor="#888888"
+            android:layout_marginTop="8dp"/>
+
+    </RelativeLayout>
+
+    <!--    播放控制-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPrevious"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/button_previous"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/btnPlayPause"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_play"
+            android:layout_marginRight="10dp"/>
+
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/button_next"
+            android:layout_marginRight="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:background="@drawable/ic_biankuang"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <Button
+            android:id="@+id/downLoadButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_download" />
+
+        <Button
+            android:id="@+id/favButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_like" />
+
+        <Button
+            android:id="@+id/modeButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_order" /> <!-- 默认图标为列表循环 -->
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_add" />
+
+        <Button
+            android:id="@+id/menuButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_menu" />
+    </LinearLayout>
+</LinearLayout>
